@@ -1,0 +1,10 @@
+<p>Max upload size is 50MiB, read the <a href="<%= page_path @conn, :faq %>">FAQ</a></p>
+<div id="upload-drop" class="uk-placeholder uk-text-center">
+  <input type="hidden" id="_csrf_token" name="_csrf_token" value="<%= get_csrf_token() %>">
+  <i class="uk-icon-cloud-upload uk-icon-medium uk-text-muted uk-margin-small-right"></i>Drop files here or <a class="uk-form-file">select them<input id="upload-select" type="file" multiple></a>.
+</div>
+<div id="progressbar" class="uk-progress uk-hidden uk-progress-striped uk-active">
+  <div class="uk-progress-bar" style="width: 0%;">...</div>
+</div>
+<div id="uploaded-files">
+</div>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Honk! Honk!</title>
+    <link rel="stylesheet" href="<%= static_path(@conn, "/css/app.css") %>">
+  </head>
+
+  <body>
+      <div class="uk-container uk-container-center uk-margin-top uk-margin-large-bottom">
+        <div class="uk-grid" data-uk-grid-margin>
+          <div class="uk-vertical-align-middle uk-text-center uk-width-1-1">
+            <a href="<%= page_url @conn, :index %>"><img src="<%= static_path(@conn, "/images/chen.png") %>" title="Honk Honk" alt="Honk Honk" class="chen"></a>
+            <!-- <h1 class="uk-heading-large">Honk! Honk!</h1> -->
+          </div>
+        </div>
+        <% if get_flash(@conn, :info) do %>
+        <div class="uk-grid">
+          <div class="uk-width-1-1">
+            <p class="uk-alert" role="alert"><%= get_flash(@conn, :info) %></p>
+            <p class="uk-alert uk-alert-danger" role="alert"><%= get_flash(@conn, :error) %></p>
+          </div>
+        </div>
+        <% end %>
+        <div class="uk-grid">
+          <div class="uk-width-1-1">
+            <%= @inner %>
+          </div>
+        </div>
+      </div>
+    <script src="<%= static_path(@conn, "/js/vendor.js") %>"></script>
+    <script src="<%= static_path(@conn, "/js/app.js") %>"></script>
+    <script>require("web/static/js/app")</script>
+  </body>
+</html>

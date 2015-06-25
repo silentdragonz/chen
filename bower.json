@@ -1,0 +1,41 @@
+{
+  "name": "chen",
+  "version": "0.1.0",
+  "authors": [
+    "SilentDragon <flandre.scarlet@2hu.moe>"
+  ],
+  "description": "Pomf clone written in Phoenix",
+  "keywords": [
+    "elixir"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "uikit": "~2.21.0",
+    "js-cookie": "~1.5.1"
+  },
+  "overrides": {
+    "uikit": {
+      "main": [
+        "css/uikit.min.css",
+        "css/components/form-file.min.css",
+        "css/components/placeholder.min.css",
+        "css/components/progress.gradient.min.css",
+        "css/components/upload.min.css",
+        "js/uikit.min.js",
+        "js/components/upload.min.js",
+        "fonts/fontawesome-webfont.eot",
+        "fonts/fontawesome-webfont.ttf",
+        "fonts/fontawesome-webfont.woff",
+        "fonts/FontAwesome.otf"
+      ]
+    }
+  }
+}

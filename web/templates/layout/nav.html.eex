@@ -1,0 +1,4 @@
+<ul class="uk-subnav">
+  <li><a href="<% page_path @conn, :index %>">Index</a></li>
+  <li><a href="<% page_path @conn, :faq %>">FAQ</a></li>
+</ul>
