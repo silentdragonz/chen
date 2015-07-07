@@ -1,0 +1,20 @@
+<h2>Files</h2>
+
+<div id="grid" class="uk-grid-width-small-1-2 uk-grid-width-medium-1-4 uk-grid-width-large-1-4" data-uk-grid data-uk-observe>
+<%= for admin_files <- @files do %>
+  <%= if Enum.member?([".jpg", ".jpeg", ".gif", ".png"], Path.extname(admin_files.filename)) do %>
+    <div>
+      <a href="http://<%= @cdn_url %>/<%= admin_files.filename %>" target="_blank">
+      <figure class="uk-overlay uk-overlay-hover">
+        <img src="http://<%= @cdn_url %>/<%= admin_files.filename %>" alt="<%= admin_files.filename %>">
+        <figcaption class="uk-overlay-panel uk-overlay-background">
+          <p><%= admin_files.filename %></p>
+          <p><%= admin_files.size %></p>
+          <p><%= admin_files.date %></p>
+        </figcaption>
+      </figure>
+      </a>
+    </div>
+  <% end %>
+<% end %>
+</div>

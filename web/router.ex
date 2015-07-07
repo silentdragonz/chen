@@ -20,4 +20,12 @@ defmodule Chen.Router do
     post "/upload", PageController, :upload
   end
 
+  scope "/admin", Chen do
+    pipe_through :browser
+
+    resources "/", AdminController, only: [:index]
+    resources "/files", AdminFilesController, only: [:index, :delete]
+    get "/grid", AdminFilesController, :grid
+  end
+
 end

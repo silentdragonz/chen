@@ -1,0 +1,47 @@
+<h2>Show admin_files</h2>
+
+<ul>
+
+  <li>
+    <strong>Hash:</strong>
+    <%= @admin_files.hash %>
+  </li>
+
+  <li>
+    <strong>Originalname:</strong>
+    <%= @admin_files.originalname %>
+  </li>
+
+  <li>
+    <strong>Size:</strong>
+    <%= @admin_files.size %>
+  </li>
+
+  <li>
+    <strong>Date:</strong>
+    <%= @admin_files.date %>
+  </li>
+
+  <li>
+    <strong>Expire:</strong>
+    <%= @admin_files.expire %>
+  </li>
+
+  <li>
+    <strong>Delid:</strong>
+    <%= @admin_files.delid %>
+  </li>
+
+  <li>
+    <strong>User:</strong>
+    <%= @admin_files.user %>
+  </li>
+
+  <li>
+    <strong>Dir:</strong>
+    <%= @admin_files.dir %>
+  </li>
+
+</ul>
+
+<%= link "Back", to: admin_files_path(@conn, :index) %>

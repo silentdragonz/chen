@@ -19,7 +19,8 @@
   ],
   "dependencies": {
     "uikit": "~2.21.0",
-    "js-cookie": "~1.5.1"
+    "js-cookie": "~1.5.1",
+    "datatables": "~1.10.7"
   },
   "overrides": {
     "uikit": {
@@ -31,6 +32,7 @@
         "css/components/upload.min.css",
         "js/uikit.min.js",
         "js/components/upload.min.js",
+        "js/components/grid.min.js",
         "fonts/fontawesome-webfont.eot",
         "fonts/fontawesome-webfont.ttf",
         "fonts/fontawesome-webfont.woff",

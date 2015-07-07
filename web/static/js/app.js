@@ -38,6 +38,12 @@ class App {
             };
         var select = UIkit.uploadSelect($("#upload-select"), settings),
             drop   = UIkit.uploadDrop($("#upload-drop"), settings);
+
+        $(document).ready(function() {
+            $('#chen_files').DataTable({
+                "lengthChange": false
+            });
+        });
     }
 };
 
