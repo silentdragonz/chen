@@ -13,7 +13,6 @@ defmodule Chen.PageController do
     if is_nil(files) do
       json conn, %{error: "Error uploading files."}
     else
-      #json conn, %{error: "Files", files: files}
       f = hd(files)
       if File.exists?(f.path) do
         {:ok, cdn} = :application.get_env(:cdn)
@@ -30,9 +29,9 @@ defmodule Chen.PageController do
           matching_file = hd(res)
           filename = matching_file.filename
         else
-          ext = Path.extname(f.filename)
-          filename = generate_name(ext)
-          #filename = random_string(6) <> ext
+          filename = f.filename
+          |> Path.extname
+          |> generate_name
           File.cp!(f.path, cdn[:cdn_path] <> "/" <> filename)
           File.rm(f.path)
           changeset = Chen.File.changeset(%Chen.File{}, %{originalname: f.filename, filename: filename, size: file_stat.size, hash: hash, date: Ecto.Date.local, delid: :crypto.hash(:sha, f.path) |> Base.encode16})
@@ -51,6 +50,7 @@ defmodule Chen.PageController do
   end
 
   def generate_name(ext) do
+    max_tries = Application.get_env(:chen, :cdn)
     filename = random_string(6) <> ext
     q = from f in Chen.File,
       where: f.filename == ^filename,
