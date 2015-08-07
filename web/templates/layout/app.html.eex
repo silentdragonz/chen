@@ -6,14 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>Honk! Honk!</title>
-    <link rel="stylesheet" href="<%= static_path(@conn, "/css/app.css") %>">
+    <link rel="stylesheet" href="<%= static_path @conn, "/css/app.css" %>">
   </head>
 
   <body>
       <div class="uk-container uk-container-center uk-margin-top uk-margin-large-bottom">
         <div class="uk-grid" data-uk-grid-margin>
           <div class="uk-vertical-align-middle uk-text-center uk-width-1-1">
-            <a href="<%= page_url @conn, :index %>"><img src="<%= static_path(@conn, "/images/chen.png") %>" title="Honk Honk" alt="Honk Honk" class="chen"></a>
+            <a href="<%= page_url @conn, :index %>"><img src="<%= static_path @conn, "/images/chen.png" %>" title="Honk Honk" alt="Honk Honk" class="chen"></a>
             <!-- <h1 class="uk-heading-large">Honk! Honk!</h1> -->
           </div>
         </div>
@@ -31,8 +31,8 @@
           </div>
         </div>
       </div>
-    <script src="<%= static_path(@conn, "/js/vendor.js") %>"></script>
-    <script src="<%= static_path(@conn, "/js/app.js") %>"></script>
+    <script src="<%= static_path @conn, "/js/vendor.js" %>"></script>
+    <script src="<%= static_path @conn, "/js/app.js" %>"></script>
     <script>require("web/static/js/app")</script>
   </body>
 </html>

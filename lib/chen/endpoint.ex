@@ -6,12 +6,13 @@ defmodule Chen.Endpoint do
   # You should set gzip to true if you are running phoenix.digest
   # when deploying your static files in production.
   plug Plug.Static,
-    at: "/", from: :chen, gzip: false,
+    at: "/", from: :chen, gzip: true,
     only: ~w(css images js fonts favicon.ico robots.txt)
 
   # Code reloading can be explicitly enabled under the
   # :code_reloader configuration of your endpoint.
   if code_reloading? do
+    socket "/phoenix/live_reload/socket", Phoenix.LiveReloader.Socket
     plug Phoenix.LiveReloader
     plug Phoenix.CodeReloader
   end
@@ -31,5 +32,5 @@ defmodule Chen.Endpoint do
     key: "_chen_key",
     signing_salt: "gFyh4CLm"
 
-  plug :router, Chen.Router
+  plug Chen.Router
 end

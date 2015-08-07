@@ -16,4 +16,5 @@ config :chen, Chen.Repo,
   username: "chen_test",
   password: "chentest",
   database: "chen_test",
+  pool: Ecto.Adapters.SQL.Sandbox,
   size: 1 # Use a single connection for transactional tests
